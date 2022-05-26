@@ -16,6 +16,10 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
+tasks.named<JavaExec>("run") {
+    standardInput = System.`in`
+}
+
 tasks.test {
     useJUnitPlatform()
 }
@@ -25,5 +29,5 @@ tasks.withType<KotlinCompile> {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("calculator.MainKt")
 }
